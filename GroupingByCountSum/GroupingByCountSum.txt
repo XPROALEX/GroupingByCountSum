@@ -1,0 +1,22 @@
+SELECT name, COUNT(*) AS order_Count
+FROM MEAL_ORDER
+GROUP BY meal_name;
+
+SELECT SUM(price) AS total_Revenue
+FROM MEAL_ORDER
+WHERE Price > 15;
+
+SELECT name, COUNT(*) AS highCalorie_Count
+FROM MEAL_ORDER
+WHERE Calories > 500
+GROUP BY meal_name;
+
+SELECT name, SUM(Price) AS totalPrice
+FROM MEAL_ORDER
+WHERE LOWER(name) LIKE '%s%'
+GROUP BY meal_name;
+
+SELECT name, COUNT(*) AS order_Count
+FROM MEAL_ORDER
+WHERE TIME_MEAL_ORDERED < '2023-09-30 18:00:00'
+GROUP BY meal_name;
